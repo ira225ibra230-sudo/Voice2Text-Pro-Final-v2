@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice2Text Pro - محول الصوت إلى نص</title>
+    <meta name="description" content="Convert your voice to text instantly using AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Voice2Text <span class="highlight">Pro</span></h1>
+            <p>حول صوتك إلى نص بدقة عالية</p>
+        </header>
+
+        <main>
+            <div class="recorder-section">
+                <div class="status-indicator" id="statusIndicator">جاهز للتسجيل</div>
+
+                <button id="recordButton" class="record-btn" aria-label="Start Recording">
+                    <div class="mic-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 14C14.2091 14 16 12.2091 16 10V4C16 1.79086 14.2091 0 12 0C9.79086 0 8 1.79086 8 4V10C8 12.2091 9.79086 14 12 14Z"
+                                fill="currentColor" />
+                            <path d="M19 10V11C19 14.866 15.866 18 12 18C8.13401 18 5 14.866 5 11V10"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 18V22M8 22H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </button>
+                <p class="instruction">اضغط الميكروفون للبدء</p>
+            </div>
+
+            <div class="result-section">
+                <div class="result-header">
+                    <label for="transcription">النص المحول:</label>
+                    <button id="copyButton" class="icon-btn" title="نسخ النص">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        نسخ
+                    </button>
+                </div>
+                <textarea id="transcription" readonly placeholder="سيظهر النص هنا..."></textarea>
+            </div>
+        </main>
+
+        <footer>
+            <div class="config-section">
+                <label for="webhookUrl">N8N Webhook URL:</label>
+                <input type="text" id="webhookUrl" placeholder="https://your-n8n-instance.com/webhook/..."
+                    value="https://ibo1234.app.n8n.cloud/webhook/9f73556e-1305-47e2-a116-1f2a3659e513">
+            </div>
+            <p>&copy; 2024 Voice2Text Pro</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
